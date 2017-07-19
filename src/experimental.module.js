@@ -40,7 +40,7 @@
             },
             link: function (scope) {
                 scope.getConvertedPercentage = function () {
-                  return (Math.floor(scope.percentage * 100) || 0) + ' %';
+                  return (Math.floor(scope.percentage * 100) || 0) + '%';
                 };
             }
         }
