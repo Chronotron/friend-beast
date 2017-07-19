@@ -44,6 +44,8 @@ describe('expPercentageConverterInput Directive', function () {
 
     it('should validate min', function () {
         // pre-conditions
+        expect(label.text()).toBe('10%');
+        expect(input.val()).toBe('0.1');
         expect(input.hasClass('ng-invalid')).toBeFalsy();
         expect(input.hasClass('ng-invalid-min')).toBeFalsy();
 
@@ -52,12 +54,16 @@ describe('expPercentageConverterInput Directive', function () {
         $scope.$apply();
 
         // post-conditions
+        expect(label.text()).toBe('-10%');
+        expect(input.val()).toBe('-0.1');
         expect(input.hasClass('ng-invalid')).toBeTruthy();
         expect(input.hasClass('ng-invalid-min')).toBeTruthy();
     });
 
-    it('should validate min', function () {
+    it('should validate max', function () {
         // pre-conditions
+        expect(label.text()).toBe('10%');
+        expect(input.val()).toBe('0.1');
         expect(input.hasClass('ng-invalid')).toBeFalsy();
         expect(input.hasClass('ng-invalid-max')).toBeFalsy();
 
@@ -66,6 +72,8 @@ describe('expPercentageConverterInput Directive', function () {
         $scope.$apply();
 
         // post-conditions
+        expect(label.text()).toBe('110%');
+        expect(input.val()).toBe('1.1');
         expect(input.hasClass('ng-invalid')).toBeTruthy();
         expect(input.hasClass('ng-invalid-max')).toBeTruthy();
     });
