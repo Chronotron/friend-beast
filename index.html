@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="experimentModule">
+<head>
+    <meta charset="UTF-8">
+    <title>Directives</title>
+    <script type="text/javascript" src="node_modules/angular/angular.js"></script>
+    <script type="text/javascript" src="src/experimental.module.js"></script>
+    <style>
+        input[type=number].ng-invalid {
+            border-color: red;
+        }
+    </style>
+</head>
+<body>
+<div ng-init="percent = 0.1">
+    {{percent}}
+    <exp-percentage-input ng-model="percent"></exp-percentage-input>
+</div>
+</body>
+</html>
