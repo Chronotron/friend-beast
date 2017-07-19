@@ -10,7 +10,7 @@
             require: 'ngModel',
             link: function (scope, element, attr, ngModelController) {
                 ngModelController.$formatters.unshift(function (value) {
-                    return value * 100;
+                    return Math.floor(value * 100);
                 });
 
                 ngModelController.$parsers.unshift(function (value) {
@@ -19,6 +19,28 @@
 
                 ngModelController.$validators.validMaxPercent = function (modelValue) {
                     return modelValue <= 1;
+                };
+
+                element.after(angular.element('<span>%</span>'));
+            }
+        }
+    }
+
+    angular.module('experimentModule').directive('expPercentageConverterInput', expPercentageConverterInput);
+
+    function expPercentageConverterInput() {
+        return {
+            template: '' +
+            '<div>' +
+            '<input type="number" ng-model="percentage" min="0.0" max="1" step="0.01">&nbsp;' +
+            '<label ng-bind="getConvertedPercentage()"></label>' +
+            '</div>',
+            scope: {
+                percentage: '='
+            },
+            link: function (scope) {
+                scope.getConvertedPercentage = function () {
+                  return (Math.floor(scope.percentage * 100) || 0) + ' %';
                 };
             }
         }

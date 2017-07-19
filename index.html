@@ -13,8 +13,21 @@
 </head>
 <body>
 <div ng-init="percent = 0.1">
-    {{percent}}
-    <exp-percentage-input ng-model="percent"></exp-percentage-input>
+    <p>
+        This directive is assuming in the requirement 'Receives a model as a float (from 0 - 1)' 'model' refers to the <br>
+        Angular modelValue, and 'Displays to user' refers to the viewValue
+    </p>
+    <p>
+        <exp-percentage-input ng-model="percent"></exp-percentage-input>
+        <br>modelValue: {{percent}}
+    </p>
+    <p>
+        This directive is assuming in the requirement 'Receives a model as a float (from 0 - 1)' 'model' refers input by the user <br>
+        and 'Displays to user' is referring to a label separate from the input
+    </p>
+    <p>
+        <exp-percentage-converter-input percentage="percent"></exp-percentage-converter-input>
+    </p>
 </div>
 </body>
 </html>
