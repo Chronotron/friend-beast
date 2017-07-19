@@ -1,7 +1,5 @@
-
 (function () {
     angular.module('experimentModule', []);
-
 
     angular.module('experimentModule').directive('expPercentageInput', expPercentageInput);
 
@@ -25,6 +23,5 @@
             }
         }
     }
-
 
 })();
