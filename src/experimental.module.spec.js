@@ -12,7 +12,7 @@ describe('expPercentageInput Directive', function () {
         // pre-conditions
         expect($scope.percentage).toBe(0.1);
 
-        // exercise
+        // execute
         input = $compile('<form name="percentageForm"><exp-percentage-input name="percentageModelController" ng-model="percentage"></exp-percentage-input></form>')($scope).find('input');
         $scope.$apply();
 
